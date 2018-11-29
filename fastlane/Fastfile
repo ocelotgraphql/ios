@@ -1,12 +1,38 @@
 default_platform(:ios)
 
+# rubocop:disable BlockLength
 platform :ios do
-  desc 'Description of what the lane does'
+  desc 'Release a new BETA build to TestFlight'
+  lane :beta do
+    ensure_git_status_clean
+
+    install_appstore_certificate
+
+    increment_build_number(xcodeproj: './App/App.xcodeproj')
+
+    build_app(scheme: 'App')
+    upload_to_testflight(skip_waiting_for_build_processing: true)
+
+    add_git_tag
+
+    commit_version_bump
+    push_to_git_remote
+  end
+
+  desc 'Install debug and production certificates and provisioning profiles'
   lane :certificates do
+    install_debug_certificate
+    install_appstore_certificate
+  end
+
+  private_lane :install_debug_certificate do
     sync_code_signing(
       app_identifier: 'com.ocelotgraphql.ios.app.debug',
       readonly: true
     )
+  end
+
+  private_lane :install_appstore_certificate do
     sync_code_signing(
       app_identifier: 'com.ocelotgraphql.ios.app',
       type: 'appstore',
@@ -14,3 +40,4 @@ platform :ios do
     )
   end
 end
+# rubocop:enable BlockLength
