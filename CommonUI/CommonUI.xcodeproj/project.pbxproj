@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912A14D721B0A32700422DE4 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A14D621B0A32700422DE4 /* Presentable.swift */; };
+		912A14D921B0A3A800422DE4 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A14D821B0A3A800422DE4 /* Presenter.swift */; };
 		91533D5A21B09B3100CE722A /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91533D5021B09B3100CE722A /* CommonUI.framework */; };
 		91533D5F21B09B3100CE722A /* CommonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91533D5E21B09B3100CE722A /* CommonUITests.swift */; };
 		91533D6121B09B3100CE722A /* CommonUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 91533D5321B09B3100CE722A /* CommonUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		912A14D621B0A32700422DE4 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		912A14D821B0A3A800422DE4 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		91533D5021B09B3100CE722A /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91533D5321B09B3100CE722A /* CommonUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUI.h; sourceTree = "<group>"; };
 		91533D5421B09B3100CE722A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +54,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		912A14D521B0A31800422DE4 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				912A14D621B0A32700422DE4 /* Presentable.swift */,
+				912A14D821B0A3A800422DE4 /* Presenter.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 		91533D4621B09B3100CE722A = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +86,7 @@
 			children = (
 				91533D5321B09B3100CE722A /* CommonUI.h */,
 				91533D5421B09B3100CE722A /* Info.plist */,
+				912A14D521B0A31800422DE4 /* Types */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -148,6 +162,7 @@
 				TargetAttributes = {
 					91533D4F21B09B3100CE722A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					91533D5821B09B3100CE722A = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912A14D921B0A3A800422DE4 /* Presenter.swift in Sources */,
+				912A14D721B0A32700422DE4 /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +358,7 @@
 		91533D6521B09B3100CE722A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ocelotgraphql.ios.commonui;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +385,7 @@
 		91533D6621B09B3100CE722A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +411,7 @@
 		91533D6821B09B3100CE722A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K29GPG8VMU;
 				INFOPLIST_FILE = CommonUITests/Info.plist;
@@ -409,6 +430,7 @@
 		91533D6921B09B3100CE722A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K29GPG8VMU;
 				INFOPLIST_FILE = CommonUITests/Info.plist;
