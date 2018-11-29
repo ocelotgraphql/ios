@@ -52,3 +52,10 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
+
+### Fastlane ###
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/screenshots/screenshots.html
+fastlane/test_output
