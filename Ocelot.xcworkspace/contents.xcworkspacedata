@@ -4,4 +4,7 @@
    <FileRef
       location = "container:App/App.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:CommonUI/CommonUI.xcodeproj">
+   </FileRef>
 </Workspace>
