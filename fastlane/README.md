@@ -16,11 +16,16 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
+### ios beta
+```
+fastlane ios beta
+```
+Release a new BETA build to TestFlight
 ### ios certificates
 ```
 fastlane ios certificates
 ```
-Description of what the lane does
+Install debug and production certificates and provisioning profiles
 
 ----
 
