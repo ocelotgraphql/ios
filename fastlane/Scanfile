@@ -1,0 +1,4 @@
+scheme('App')
+devices(['iPhone XS'])
+clean(true)
+output_types('junit')

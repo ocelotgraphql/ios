@@ -16,6 +16,11 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
+### ios unit_test
+```
+fastlane ios unit_test
+```
+Run unit tests of all modules
 ### ios beta
 ```
 fastlane ios beta

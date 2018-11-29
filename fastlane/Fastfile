@@ -2,6 +2,11 @@ default_platform(:ios)
 
 # rubocop:disable BlockLength
 platform :ios do
+  desc 'Run unit tests of all modules'
+  lane :unit_test do
+    run_tests
+  end
+
   desc 'Release a new BETA build to TestFlight'
   lane :beta do
     ensure_git_status_clean
