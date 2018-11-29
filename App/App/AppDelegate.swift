@@ -1,6 +1,5 @@
 import UIKit
 
-@UIApplicationMain
 final class AppDelegate: UIResponder {
 	lazy var window: UIWindow? = {
 		let window = UIWindow(frame: UIScreen.main.bounds)
