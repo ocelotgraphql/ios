@@ -8,7 +8,7 @@ platform :ios do
 
     install_appstore_certificate
 
-    increment_build_number
+    increment_build_number(xcodeproj: './App/App.xcodeproj')
 
     build_app(scheme: 'App')
     upload_to_testflight(skip_waiting_for_build_processing: true)
