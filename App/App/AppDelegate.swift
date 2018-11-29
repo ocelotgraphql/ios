@@ -4,7 +4,9 @@ import UIKit
 final class AppDelegate: UIResponder {
 	lazy var window: UIWindow? = {
 		let window = UIWindow(frame: UIScreen.main.bounds)
-		window.rootViewController = UIViewController()
+		let viewController = UIViewController()
+		viewController.view.backgroundColor = .white
+		window.rootViewController = viewController
 		return window
 	}()
 }
