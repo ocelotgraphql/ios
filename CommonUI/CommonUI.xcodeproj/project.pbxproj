@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		912A14D721B0A32700422DE4 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A14D621B0A32700422DE4 /* Presentable.swift */; };
 		912A14D921B0A3A800422DE4 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A14D821B0A3A800422DE4 /* Presenter.swift */; };
+		912A14DB21B0A43400422DE4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A14DA21B0A43400422DE4 /* Coordinator.swift */; };
 		91533D5A21B09B3100CE722A /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91533D5021B09B3100CE722A /* CommonUI.framework */; };
 		91533D5F21B09B3100CE722A /* CommonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91533D5E21B09B3100CE722A /* CommonUITests.swift */; };
 		91533D6121B09B3100CE722A /* CommonUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 91533D5321B09B3100CE722A /* CommonUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		912A14D621B0A32700422DE4 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
 		912A14D821B0A3A800422DE4 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		912A14DA21B0A43400422DE4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		91533D5021B09B3100CE722A /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91533D5321B09B3100CE722A /* CommonUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonUI.h; sourceTree = "<group>"; };
 		91533D5421B09B3100CE722A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				912A14D621B0A32700422DE4 /* Presentable.swift */,
 				912A14D821B0A3A800422DE4 /* Presenter.swift */,
+				912A14DA21B0A43400422DE4 /* Coordinator.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				912A14D921B0A3A800422DE4 /* Presenter.swift in Sources */,
 				912A14D721B0A32700422DE4 /* Presentable.swift in Sources */,
+				912A14DB21B0A43400422DE4 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
