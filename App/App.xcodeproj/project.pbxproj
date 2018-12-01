@@ -15,6 +15,8 @@
 		918E081F21B03AC100FB90D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918E081E21B03AC100FB90D7 /* AppDelegate.swift */; };
 		918E082621B03AC100FB90D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 918E082521B03AC100FB90D7 /* Assets.xcassets */; };
 		918E082921B03AC100FB90D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 918E082721B03AC100FB90D7 /* LaunchScreen.storyboard */; };
+		91A460AC21B3270F00799C52 /* PlaygroundBrowserUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A460AA21B3270800799C52 /* PlaygroundBrowserUI.framework */; };
+		91A460AD21B3270F00799C52 /* PlaygroundBrowserUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91A460AA21B3270800799C52 /* PlaygroundBrowserUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		91AC77EB21B09325007F753A /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC77EA21B09325007F753A /* AppDelegateTests.swift */; };
 		91AC77F321B09478007F753A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AC77F221B09478007F753A /* main.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				91A460AD21B3270F00799C52 /* PlaygroundBrowserUI.framework in Embed Frameworks */,
 				91533D7C21B09C4000CE722A /* CommonUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -53,6 +56,7 @@
 		918E082521B03AC100FB90D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		918E082821B03AC100FB90D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		918E082A21B03AC100FB90D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A460AA21B3270800799C52 /* PlaygroundBrowserUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PlaygroundBrowserUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AC77E821B09325007F753A /* AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AC77EA21B09325007F753A /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		91AC77EC21B09325007F753A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A460AC21B3270F00799C52 /* PlaygroundBrowserUI.framework in Frameworks */,
 				91533D7B21B09C4000CE722A /* CommonUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +102,7 @@
 		91533D7821B09C3C00CE722A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91A460AA21B3270800799C52 /* PlaygroundBrowserUI.framework */,
 				91533D7921B09C3C00CE722A /* CommonUI.framework */,
 			);
 			name = Frameworks;
