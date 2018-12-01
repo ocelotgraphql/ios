@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		91A460A421B3269B00799C52 /* PlaygroundBrowserUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A460A221B3269B00799C52 /* PlaygroundBrowserUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91A460B021B327E500799C52 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A460AF21B327E500799C52 /* CommonUI.framework */; };
+		91A460B421B3285700799C52 /* PlaygroundBrowserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A460B321B3285700799C52 /* PlaygroundBrowserCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		91A4609F21B3269B00799C52 /* PlaygroundBrowserUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlaygroundBrowserUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A460A221B3269B00799C52 /* PlaygroundBrowserUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaygroundBrowserUI.h; sourceTree = "<group>"; };
 		91A460A321B3269B00799C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A460AF21B327E500799C52 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A460B321B3285700799C52 /* PlaygroundBrowserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundBrowserCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A460B021B327E500799C52 /* CommonUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +37,7 @@
 			children = (
 				91A460A121B3269B00799C52 /* PlaygroundBrowserUI */,
 				91A460A021B3269B00799C52 /* Products */,
+				91A460AE21B327E500799C52 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,8 +54,33 @@
 			children = (
 				91A460A221B3269B00799C52 /* PlaygroundBrowserUI.h */,
 				91A460A321B3269B00799C52 /* Info.plist */,
+				91A460B121B3281900799C52 /* Scenes */,
 			);
 			path = PlaygroundBrowserUI;
+			sourceTree = "<group>";
+		};
+		91A460AE21B327E500799C52 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91A460AF21B327E500799C52 /* CommonUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91A460B121B3281900799C52 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				91A460B221B3282D00799C52 /* Browse */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		91A460B221B3282D00799C52 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				91A460B321B3285700799C52 /* PlaygroundBrowserCoordinator.swift */,
+			);
+			path = Browse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +126,7 @@
 				TargetAttributes = {
 					91A4609E21B3269B00799C52 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -130,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A460B421B3285700799C52 /* PlaygroundBrowserCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +294,7 @@
 		91A460A821B3269B00799C52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -278,6 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ocelotgraphql.ios.playgroundbrowserui;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +321,7 @@
 		91A460A921B3269B00799C52 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
