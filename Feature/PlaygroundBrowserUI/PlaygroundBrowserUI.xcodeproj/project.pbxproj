@@ -10,6 +10,7 @@
 		91A460A421B3269B00799C52 /* PlaygroundBrowserUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A460A221B3269B00799C52 /* PlaygroundBrowserUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91A460B021B327E500799C52 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A460AF21B327E500799C52 /* CommonUI.framework */; };
 		91A460B421B3285700799C52 /* PlaygroundBrowserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A460B321B3285700799C52 /* PlaygroundBrowserCoordinator.swift */; };
+		91A460B621B329DC00799C52 /* PlaygroundBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A460B521B329DC00799C52 /* PlaygroundBrowserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		91A460A321B3269B00799C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A460AF21B327E500799C52 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A460B321B3285700799C52 /* PlaygroundBrowserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundBrowserCoordinator.swift; sourceTree = "<group>"; };
+		91A460B521B329DC00799C52 /* PlaygroundBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundBrowserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				91A460B321B3285700799C52 /* PlaygroundBrowserCoordinator.swift */,
+				91A460B521B329DC00799C52 /* PlaygroundBrowserViewController.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A460B621B329DC00799C52 /* PlaygroundBrowserViewController.swift in Sources */,
 				91A460B421B3285700799C52 /* PlaygroundBrowserCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
