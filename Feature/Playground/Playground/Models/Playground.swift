@@ -3,44 +3,35 @@ import UIKit
 /// `UIDocument` subclass used to manage `.ocelotplayground` files.
 public final class Playground: UIDocument {
 	/// Contents of the playgrounds `contents.graphql` file.
-	private (set) var contents = ""
+	public var contents = "" {
+		didSet {
+			guard contents != oldValue else { return }
+
+			if let contentsFileWrapper = packageFileWrapper.fileWrappers?[FileName.contents] {
+				packageFileWrapper.removeFileWrapper(contentsFileWrapper)
+			}
+		}
+	}
 
 	/// `Settings` stored inside the playgrounds `settings.json` file.
-	private (set) var settings = Settings(endpoint: nil)
+	public var settings = Settings(endpoint: nil) {
+		didSet {
+			guard settings != oldValue else { return }
+
+			if let settingsFileWrapper = packageFileWrapper.fileWrappers?[FileName.settings] {
+				packageFileWrapper.removeFileWrapper(settingsFileWrapper)
+			}
+		}
+	}
 
 	private lazy var jsonEncoder = JSONEncoder()
 	private lazy var jsonDecoder = JSONDecoder()
 
 	private lazy var packageFileWrapper = FileWrapper(directoryWithFileWrappers: [:])
 
-	/// Tells the `Playground` to store the given contents on the next save.
-	///
-	/// - Warning: This will not save the updated Playground to disk.
-	/// - Parameter updatedContents: The updated contents.
-	public func updateContents(_ updatedContents: String) {
-		contents = updatedContents
-
-		if let contentsFileWrapper = packageFileWrapper.fileWrappers?[FileName.contents] {
-			packageFileWrapper.removeFileWrapper(contentsFileWrapper)
-		}
-	}
-
-	/// Tells the `Playground` to store the given `Settings` on the next save.
-	///
-	/// - Warning: This will not save the updated Playground to disk.
-	/// - Parameter updatedSettings: The updated `Settings`.
-	public func updateSettings(_ updatedSettings: Settings) {
-		settings = updatedSettings
-
-		if let settingsFileWrapper = packageFileWrapper.fileWrappers?[FileName.settings] {
-			packageFileWrapper.removeFileWrapper(settingsFileWrapper)
-		}
-	}
-
 	public override func contents(forType typeName: String) throws -> Any {
 		if packageFileWrapper.fileWrappers?[FileName.contents] == nil,
-			let contentsData = contents.data(using: .utf8
-		) {
+			let contentsData = contents.data(using: .utf8) {
 			let contentsFileWrapper = FileWrapper(regularFileWithContents: contentsData)
 			contentsFileWrapper.preferredFilename = FileName.contents
 			packageFileWrapper.addFileWrapper(contentsFileWrapper)
