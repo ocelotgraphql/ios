@@ -11,6 +11,9 @@
       location = "container:"
       name = "Feature">
       <FileRef
+         location = "group:Feature/Playground/Playground.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Feature/PlaygroundBrowserUI/PlaygroundBrowserUI.xcodeproj">
       </FileRef>
    </Group>
