@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		91753D8521B6CED3004B3AFC /* Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91753D7B21B6CED3004B3AFC /* Playground.framework */; };
-		91753D8A21B6CED3004B3AFC /* PlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91753D8921B6CED3004B3AFC /* PlaygroundTests.swift */; };
 		91753D8C21B6CED3004B3AFC /* Playground.h in Headers */ = {isa = PBXBuildFile; fileRef = 91753D7E21B6CED3004B3AFC /* Playground.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91753D9721B6D0C2004B3AFC /* PlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91753D9621B6D0C2004B3AFC /* PlaygroundTests.swift */; };
+		91753D9A21B6D336004B3AFC /* Playground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91753D9921B6D336004B3AFC /* Playground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +28,9 @@
 		91753D7E21B6CED3004B3AFC /* Playground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Playground.h; sourceTree = "<group>"; };
 		91753D7F21B6CED3004B3AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91753D8421B6CED3004B3AFC /* PlaygroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlaygroundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		91753D8921B6CED3004B3AFC /* PlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundTests.swift; sourceTree = "<group>"; };
 		91753D8B21B6CED3004B3AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91753D9621B6D0C2004B3AFC /* PlaygroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundTests.swift; sourceTree = "<group>"; };
+		91753D9921B6D336004B3AFC /* Playground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				91753D7E21B6CED3004B3AFC /* Playground.h */,
 				91753D7F21B6CED3004B3AFC /* Info.plist */,
+				91753D9821B6D324004B3AFC /* Models */,
 			);
 			path = Playground;
 			sourceTree = "<group>";
@@ -80,10 +83,26 @@
 		91753D8821B6CED3004B3AFC /* PlaygroundTests */ = {
 			isa = PBXGroup;
 			children = (
-				91753D8921B6CED3004B3AFC /* PlaygroundTests.swift */,
 				91753D8B21B6CED3004B3AFC /* Info.plist */,
+				91753D9521B6D0B4004B3AFC /* Models */,
 			);
 			path = PlaygroundTests;
+			sourceTree = "<group>";
+		};
+		91753D9521B6D0B4004B3AFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91753D9621B6D0C2004B3AFC /* PlaygroundTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		91753D9821B6D324004B3AFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				91753D9921B6D336004B3AFC /* Playground.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +167,11 @@
 				TargetAttributes = {
 					91753D7A21B6CED2004B3AFC = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					91753D8321B6CED3004B3AFC = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -194,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91753D9A21B6D336004B3AFC /* Playground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91753D8A21B6CED3004B3AFC /* PlaygroundTests.swift in Sources */,
+				91753D9721B6D0C2004B3AFC /* PlaygroundTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +363,7 @@
 		91753D9021B6CED3004B3AFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +381,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ocelotgraphql.ios.playground;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +390,7 @@
 		91753D9121B6CED3004B3AFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +416,8 @@
 		91753D9321B6CED3004B3AFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K29GPG8VMU;
 				INFOPLIST_FILE = PlaygroundTests/Info.plist;
@@ -401,6 +428,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ocelotgraphql.ios.playgroundtests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,6 +437,8 @@
 		91753D9421B6CED3004B3AFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K29GPG8VMU;
 				INFOPLIST_FILE = PlaygroundTests/Info.plist;
