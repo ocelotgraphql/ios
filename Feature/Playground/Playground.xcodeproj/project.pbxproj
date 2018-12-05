@@ -10,6 +10,7 @@
 		9124FC8821B7F86200844300 /* PlaygroundBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC8721B7F86200844300 /* PlaygroundBuilder.swift */; };
 		9124FC8A21B7F97F00844300 /* PlaygroundBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC8921B7F97F00844300 /* PlaygroundBuilderTests.swift */; };
 		9124FC9421B8060700844300 /* PlaygroundTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC9321B8060700844300 /* PlaygroundTemplate.swift */; };
+		9124FC9921B80B0700844300 /* PlaygroundTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC9821B80B0700844300 /* PlaygroundTemplateTests.swift */; };
 		91753D8521B6CED3004B3AFC /* Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91753D7B21B6CED3004B3AFC /* Playground.framework */; };
 		91753D8C21B6CED3004B3AFC /* Playground.h in Headers */ = {isa = PBXBuildFile; fileRef = 91753D7E21B6CED3004B3AFC /* Playground.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91753D9721B6D0C2004B3AFC /* PlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91753D9621B6D0C2004B3AFC /* PlaygroundTests.swift */; };
@@ -30,6 +31,7 @@
 		9124FC8721B7F86200844300 /* PlaygroundBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundBuilder.swift; sourceTree = "<group>"; };
 		9124FC8921B7F97F00844300 /* PlaygroundBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundBuilderTests.swift; sourceTree = "<group>"; };
 		9124FC9321B8060700844300 /* PlaygroundTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundTemplate.swift; sourceTree = "<group>"; };
+		9124FC9821B80B0700844300 /* PlaygroundTemplateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundTemplateTests.swift; sourceTree = "<group>"; };
 		91753D7B21B6CED3004B3AFC /* Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91753D7E21B6CED3004B3AFC /* Playground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Playground.h; sourceTree = "<group>"; };
 		91753D7F21B6CED3004B3AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				91753D9621B6D0C2004B3AFC /* PlaygroundTests.swift */,
 				9124FC8921B7F97F00844300 /* PlaygroundBuilderTests.swift */,
+				9124FC9821B80B0700844300 /* PlaygroundTemplateTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				9124FC8A21B7F97F00844300 /* PlaygroundBuilderTests.swift in Sources */,
 				91753D9721B6D0C2004B3AFC /* PlaygroundTests.swift in Sources */,
+				9124FC9921B80B0700844300 /* PlaygroundTemplateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
