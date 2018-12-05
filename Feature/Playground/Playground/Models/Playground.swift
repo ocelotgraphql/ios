@@ -90,6 +90,10 @@ extension Playground {
 	public struct Settings: Codable {
 		/// The GraphQL APIs root endpoint to which the `Playground` sends queries.
 		public let endpoint: URL?
+
+		public init(endpoint: URL? = nil) {
+			self.endpoint = endpoint
+		}
 	}
 }
 

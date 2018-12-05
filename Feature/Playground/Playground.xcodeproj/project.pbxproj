@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9124FC8821B7F86200844300 /* PlaygroundBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC8721B7F86200844300 /* PlaygroundBuilder.swift */; };
+		9124FC8A21B7F97F00844300 /* PlaygroundBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC8921B7F97F00844300 /* PlaygroundBuilderTests.swift */; };
 		91753D8521B6CED3004B3AFC /* Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91753D7B21B6CED3004B3AFC /* Playground.framework */; };
 		91753D8C21B6CED3004B3AFC /* Playground.h in Headers */ = {isa = PBXBuildFile; fileRef = 91753D7E21B6CED3004B3AFC /* Playground.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91753D9721B6D0C2004B3AFC /* PlaygroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91753D9621B6D0C2004B3AFC /* PlaygroundTests.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9124FC8721B7F86200844300 /* PlaygroundBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundBuilder.swift; sourceTree = "<group>"; };
+		9124FC8921B7F97F00844300 /* PlaygroundBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundBuilderTests.swift; sourceTree = "<group>"; };
 		91753D7B21B6CED3004B3AFC /* Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91753D7E21B6CED3004B3AFC /* Playground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Playground.h; sourceTree = "<group>"; };
 		91753D7F21B6CED3004B3AFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				91753D9621B6D0C2004B3AFC /* PlaygroundTests.swift */,
+				9124FC8921B7F97F00844300 /* PlaygroundBuilderTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				91753D9921B6D336004B3AFC /* Playground.swift */,
+				9124FC8721B7F86200844300 /* PlaygroundBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9124FC8821B7F86200844300 /* PlaygroundBuilder.swift in Sources */,
 				91753D9A21B6D336004B3AFC /* Playground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9124FC8A21B7F97F00844300 /* PlaygroundBuilderTests.swift in Sources */,
 				91753D9721B6D0C2004B3AFC /* PlaygroundTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
