@@ -1,7 +1,18 @@
 import UIKit
 import CommonUI
 
+protocol PlaygroundBrowserViewControllerCoordinatorDelegate: class {
+	func playgroundBrowserViewController(
+		_ viewController: PlaygroundBrowserViewController,
+		didRequestPlaygroundCreationWithImportHandler importHandler: @escaping (
+		URL?, UIDocumentBrowserViewController.ImportMode
+		) -> Void
+	)
+}
+
 final class PlaygroundBrowserViewController: UIDocumentBrowserViewController {
+	weak var coordinatorDelegate: PlaygroundBrowserViewControllerCoordinatorDelegate?
+
 	init() {
 		super.init(forOpeningFilesWithContentTypes: ["com.ocelotgraphql.playground"])
 		delegate = self
@@ -34,8 +45,7 @@ extension PlaygroundBrowserViewController: UIDocumentBrowserViewControllerDelega
 			URL?, UIDocumentBrowserViewController.ImportMode
 		) -> Void
 	) {
-		notifyUserAboutMissingCreationFeature()
-		importHandler(nil, .none)
+		coordinatorDelegate?.playgroundBrowserViewController(self, didRequestPlaygroundCreationWithImportHandler: importHandler)
 	}
 
 	private func notifyUserAboutMissingEditingFeature() {
@@ -43,15 +53,6 @@ extension PlaygroundBrowserViewController: UIDocumentBrowserViewControllerDelega
 			title: "404 - Implementation not found",
 			message: "Editing playgrounds is not yet implemented 🙈",
 			preferredStyle: .alert
-		)
-		alertController.addAction(UIAlertAction(title: "Okay", style: .default))
-		present(alertController, animated: true)
-	}
-
-	private func notifyUserAboutMissingCreationFeature() {
-		let alertController = UIAlertController(
-			title: "404 - Implementation not found",
-			message: "Creating new playgrounds is not yet implemented 🙈", preferredStyle: .alert
 		)
 		alertController.addAction(UIAlertAction(title: "Okay", style: .default))
 		present(alertController, animated: true)
