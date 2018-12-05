@@ -6,6 +6,16 @@ extension Playground {
 		case empty
 		case gitHub
 
+		/// The `Playground.Template`s name.
+		public var name: String {
+			switch self {
+			case .empty:
+				return "Empty"
+			case .gitHub:
+				return "GitHub"
+			}
+		}
+
 		/// The `Playground`s settings.
 		public var settings: Settings {
 			switch self {
@@ -22,3 +32,5 @@ extension Playground {
 		}
 	}
 }
+
+extension Playground.Template: CaseIterable {}

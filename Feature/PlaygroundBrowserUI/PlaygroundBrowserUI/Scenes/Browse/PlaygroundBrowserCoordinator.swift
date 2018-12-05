@@ -27,7 +27,15 @@ extension PlaygroundBrowserCoordinator: PlaygroundBrowserViewControllerCoordinat
 		didRequestPlaygroundCreationWithImportHandler importHandler: @escaping PlaygroundCreationImportHandler
 	) {
 		let creationCoordinator = PlaygroundCreationCoordinator(presenter: presenter, importHandler: importHandler)
+		creationCoordinator.delegate = self
 		children.append(creationCoordinator)
 		creationCoordinator.start()
+	}
+}
+
+extension PlaygroundBrowserCoordinator: PlaygroundCreationCoordinatorDelegate {
+	func playgroundCreationCoordinatorDidCancel(_ coordinator: PlaygroundCreationCoordinator) {
+		guard let index = children.firstIndex(where: { $0 === coordinator }) else { return }
+		children.remove(at: index)
 	}
 }
