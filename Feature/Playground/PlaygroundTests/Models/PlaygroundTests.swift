@@ -4,88 +4,96 @@ import XCTest
 final class PlaygroundTests: XCTestCase {
 	private let contents = "query { hello }"
 	private let settings = Playground.Settings(endpoint: URL(string: "https://api.example.com/graphql")!)
+	var createdPlaygroundURL: URL?
 
-	func testItCreatesPlaygrounds() {
-		let playgroundCreation = expectation(description: #function)
+	override func tearDown() {
+		super.tearDown()
+		createdPlaygroundURL.flatMap(removeTemporaryPlayground)
+	}
 
-		let playgroundURL = randomTemporaryPlaygroundURL()
-		let playground = Playground(fileURL: playgroundURL)
-		var readPlayground: Playground?
+	func testItLoads() {
+		let loading = expectation(description: #function)
+		var successFullyOpenedPlayground = false
 
-		playground.contents = contents
-		playground.settings = settings
-
-		playground.save(to: playgroundURL, for: .forCreating) { _ in
-			readPlayground = Playground(fileURL: playgroundURL)
-			readPlayground?.open { _ in
-				playgroundCreation.fulfill()
+		createTemporaryPlayground { playgroundURL in
+			let playground = Playground(fileURL: playgroundURL)
+			playground.open { success in
+				successFullyOpenedPlayground = success
+				loading.fulfill()
 			}
 		}
 
 		waitForExpectations(timeout: 3)
 
-		do {
-			let subpaths = try FileManager.default.subpathsOfDirectory(atPath: playground.fileURL.relativeString)
-			XCTAssertTrue(subpaths.contains(Playground.FileName.contents))
-			XCTAssertTrue(subpaths.contains(Playground.FileName.settings))
-		} catch {
-			XCTFail(error.localizedDescription)
-		}
-
-		XCTAssertEqual(readPlayground?.contents, contents)
-		XCTAssertEqual(readPlayground?.settings, settings)
+		XCTAssertTrue(successFullyOpenedPlayground)
 	}
 
-	func testItFailsToOpenPlaygroundsWithIncorrectFileFormat() {
-		let playgroundOpening = expectation(description: #function)
+	func testItFailsToLoadMalformedFiles() {
+		let loading = expectation(description: #function)
+		var successFullyOpenedPlayground = false
 
-		let playgroundURL = randomTemporaryPlaygroundURL()
-		let playground = Playground(fileURL: playgroundURL)
-
-		guard (try? Data().write(to: playgroundURL)) != nil else {
-			XCTFail("Failed to write to \(playgroundURL)")
-			return
+		createTemporaryMalformedPlayground { playgroundURL in
+			let playground = Playground(fileURL: playgroundURL)
+			playground.open { success in
+				successFullyOpenedPlayground = success
+				loading.fulfill()
+			}
 		}
 
-		playground.open { success in
-			XCTAssertFalse(success)
-			playgroundOpening.fulfill()
-		}
+		waitForExpectations(timeout: 3)
 
-		waitForExpectations(timeout: 1)
+		XCTAssertFalse(successFullyOpenedPlayground)
 	}
 
-	func testItUpdatesPlaygrounds() {
-		let playgroundUpdating = expectation(description: #function)
+	func testItSavesUpdates() {
+		let updating = expectation(description: #function)
+		let updatedContents = "{ test }"
+		let updatedSettings = Playground.Settings(endpoint: URL(string: "https://test.com")!)
+		var successFullyUpdatedPlayground = false
+		var playground: Playground!
 
-		let playgroundURL = randomTemporaryPlaygroundURL()
-		let playground = Playground(fileURL: playgroundURL)
-		let updatedContents = "mutation { createUser }"
-		let updatedSettings = Playground.Settings(endpoint: URL(string: "https://api.updatedexample.com/graphql")!)
-		var readPlayground: Playground?
-
-		playground.contents = contents
-		playground.settings = settings
-
-		playground.save(to: playgroundURL, for: .forCreating) { _ in
-			playground.contents = updatedContents
+		createTemporaryPlayground { playgroundURL in
+			playground = Playground(fileURL: playgroundURL)
 			playground.settings = updatedSettings
-			playground.save(to: playgroundURL, for: .forOverwriting) { _ in
-				readPlayground = Playground(fileURL: playgroundURL)
-				readPlayground?.open { _ in
-					playgroundUpdating.fulfill()
-				}
+			playground.contents = updatedContents
+			playground.save(to: playgroundURL, for: .forOverwriting) { success in
+				successFullyUpdatedPlayground = success
+				updating.fulfill()
 			}
 		}
 
 		waitForExpectations(timeout: 3)
 
-		XCTAssertEqual(readPlayground?.contents, updatedContents)
-		XCTAssertEqual(readPlayground?.settings, updatedSettings)
+		XCTAssertTrue(successFullyUpdatedPlayground)
+		XCTAssertEqual(playground.settings, updatedSettings)
+		XCTAssertEqual(playground.contents, updatedContents)
 	}
 
-	private func randomTemporaryPlaygroundURL() -> URL {
-		let uuid = UUID().uuidString
-		return URL(fileURLWithPath: "\(uuid).ocelotplayground")
+	private func createTemporaryPlayground(then complete: @escaping (URL) -> Void) {
+		let playground = Playground.Builder().build()
+		playground.save(to: playground.fileURL, for: .forCreating) { [weak self] success in
+			guard success else {
+				XCTFail(#function)
+				return
+			}
+			self?.createdPlaygroundURL = playground.fileURL
+			complete(playground.fileURL)
+		}
+	}
+
+	private func createTemporaryMalformedPlayground(then complete: @escaping (URL) -> Void) {
+		let data = Data()
+		let url = URL(fileURLWithPath: NSTemporaryDirectory())
+			.appendingPathComponent("malformed.ocelotplayground")
+		do {
+			try data.write(to: url)
+			complete(url)
+		} catch {
+			XCTFail(#function)
+		}
+	}
+
+	private func removeTemporaryPlayground(at url: URL) {
+		try? FileManager.default.removeItem(at: url)
 	}
 }
