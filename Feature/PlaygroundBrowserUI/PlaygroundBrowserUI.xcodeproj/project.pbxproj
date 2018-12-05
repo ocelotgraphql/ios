@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9124FC8E21B8051600844300 /* Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9124FC8D21B8051600844300 /* Playground.framework */; };
 		91A460A421B3269B00799C52 /* PlaygroundBrowserUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A460A221B3269B00799C52 /* PlaygroundBrowserUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91A460B021B327E500799C52 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91A460AF21B327E500799C52 /* CommonUI.framework */; };
 		91A460B421B3285700799C52 /* PlaygroundBrowserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A460B321B3285700799C52 /* PlaygroundBrowserCoordinator.swift */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9124FC8D21B8051600844300 /* Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A4609F21B3269B00799C52 /* PlaygroundBrowserUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlaygroundBrowserUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A460A221B3269B00799C52 /* PlaygroundBrowserUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaygroundBrowserUI.h; sourceTree = "<group>"; };
 		91A460A321B3269B00799C52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9124FC8E21B8051600844300 /* Playground.framework in Frameworks */,
 				91A460B021B327E500799C52 /* CommonUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,6 +67,7 @@
 		91A460AE21B327E500799C52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9124FC8D21B8051600844300 /* Playground.framework */,
 				91A460AF21B327E500799C52 /* CommonUI.framework */,
 			);
 			name = Frameworks;
