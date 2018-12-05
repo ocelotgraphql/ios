@@ -16,8 +16,8 @@ extension Playground {
 		/// Create a new `Playground.Builder` from the given template.
 		///
 		/// - Parameter template: Provides the default settings and contents.
-		/// It defaults to `Playground.Template.default`.
-		public init(from template: Template = Template.default) {
+		/// It defaults to `Playground.Template.empty`.
+		public init(from template: Template = .empty) {
 			self.settings = template.settings
 			self.contents = template.contents
 		}
