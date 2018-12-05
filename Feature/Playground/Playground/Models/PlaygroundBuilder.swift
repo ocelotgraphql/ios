@@ -10,11 +10,17 @@ extension Playground {
 	/// generated `fileURL`. You can do so by manually calling `save(to:,for:,completionHandler:)`
 	/// on the returned `Playground`.
 	public final class Builder {
-		private var settings = Settings()
-		private var contents = "\n"
+		private var settings: Settings
+		private var contents: String
 
-		/// Create a new `Playground.Builder` instance
-		public init() {}
+		/// Create a new `Playground.Builder` from the given template.
+		///
+		/// - Parameter template: Provides the default settings and contents.
+		/// It defaults to `Playground.Template.default`.
+		public init(from template: Template = Template.default) {
+			self.settings = template.settings
+			self.contents = template.contents
+		}
 
 		/// Assign an `endpoint` to the playground being built.
 		///
