@@ -51,6 +51,13 @@
             BlueprintName = "Playground"
             ReferencedContainer = "container:../Feature/Playground/Playground.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9196388C21B83ED500275D32"
+            BuildableName = "Common.framework"
+            BlueprintName = "Common"
+            ReferencedContainer = "container:../Common/Common.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
@@ -81,6 +88,16 @@
                BuildableName = "PlaygroundTests.xctest"
                BlueprintName = "PlaygroundTests"
                ReferencedContainer = "container:../Feature/Playground/Playground.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9196389521B83ED500275D32"
+               BuildableName = "CommonTests.xctest"
+               BlueprintName = "CommonTests"
+               ReferencedContainer = "container:../Common/Common.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
