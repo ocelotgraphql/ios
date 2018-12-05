@@ -4,6 +4,8 @@ import CommonUI
 public final class PlaygroundBrowserCoordinator: Coordinator {
 	private let presenter: Presenter
 
+	private var children = [Coordinator]()
+
 	private lazy var browserViewController: PlaygroundBrowserViewController = {
 		let viewController = PlaygroundBrowserViewController()
 		viewController.coordinatorDelegate = self
@@ -22,11 +24,10 @@ public final class PlaygroundBrowserCoordinator: Coordinator {
 extension PlaygroundBrowserCoordinator: PlaygroundBrowserViewControllerCoordinatorDelegate {
 	func playgroundBrowserViewController(
 		_ viewController: PlaygroundBrowserViewController,
-		didRequestPlaygroundCreationWithImportHandler importHandler: @escaping (
-			URL?, UIDocumentBrowserViewController.ImportMode
-		) -> Void
+		didRequestPlaygroundCreationWithImportHandler importHandler: @escaping PlaygroundCreationImportHandler
 	) {
-		// TODO: - Start CreatePlaygroundCoordinator
-		importHandler(nil, .none)
+		let creationCoordinator = PlaygroundCreationCoordinator(presenter: presenter, importHandler: importHandler)
+		children.append(creationCoordinator)
+		creationCoordinator.start()
 	}
 }

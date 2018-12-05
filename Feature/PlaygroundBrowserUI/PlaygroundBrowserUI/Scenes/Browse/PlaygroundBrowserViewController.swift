@@ -4,9 +4,7 @@ import CommonUI
 protocol PlaygroundBrowserViewControllerCoordinatorDelegate: class {
 	func playgroundBrowserViewController(
 		_ viewController: PlaygroundBrowserViewController,
-		didRequestPlaygroundCreationWithImportHandler importHandler: @escaping (
-		URL?, UIDocumentBrowserViewController.ImportMode
-		) -> Void
+		didRequestPlaygroundCreationWithImportHandler importHandler: @escaping PlaygroundCreationImportHandler
 	)
 }
 
@@ -41,11 +39,12 @@ extension PlaygroundBrowserViewController: UIDocumentBrowserViewControllerDelega
 
 	func documentBrowser(
 		_ controller: UIDocumentBrowserViewController,
-		didRequestDocumentCreationWithHandler importHandler: @escaping (
-			URL?, UIDocumentBrowserViewController.ImportMode
-		) -> Void
+		didRequestDocumentCreationWithHandler importHandler: @escaping PlaygroundCreationImportHandler
 	) {
-		coordinatorDelegate?.playgroundBrowserViewController(self, didRequestPlaygroundCreationWithImportHandler: importHandler)
+		coordinatorDelegate?.playgroundBrowserViewController(
+			self,
+			didRequestPlaygroundCreationWithImportHandler: importHandler
+		)
 	}
 
 	private func notifyUserAboutMissingEditingFeature() {
