@@ -9,11 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D40B54921B9213200A9115D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40B54821B9213200A9115D /* NetworkSession.swift */; };
 		3D40B54B21B9215700A9115D /* URLSession+NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40B54A21B9215700A9115D /* URLSession+NetworkSession.swift */; };
-		3D40B54C21B9215B00A9115D /* URLSession+NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40B54A21B9215700A9115D /* URLSession+NetworkSession.swift */; };
-		3D40B54D21B9217900A9115D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40B54821B9213200A9115D /* NetworkSession.swift */; };
 		3D40B55121B921D600A9115D /* URLSessionNetworkSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40B54E21B921B500A9115D /* URLSessionNetworkSessionTests.swift */; };
 		9196389721B83ED500275D32 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9196388D21B83ED500275D32 /* Common.framework */; };
-		9196389C21B83ED500275D32 /* CommonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9196389B21B83ED500275D32 /* CommonTests.swift */; };
 		9196389E21B83ED500275D32 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 9196389021B83ED500275D32 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -35,7 +32,6 @@
 		9196389021B83ED500275D32 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		9196389121B83ED500275D32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9196389621B83ED500275D32 /* CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9196389B21B83ED500275D32 /* CommonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTests.swift; sourceTree = "<group>"; };
 		9196389D21B83ED500275D32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,7 +110,6 @@
 		9196389A21B83ED500275D32 /* CommonTests */ = {
 			isa = PBXGroup;
 			children = (
-				9196389B21B83ED500275D32 /* CommonTests.swift */,
 				9196389D21B83ED500275D32 /* Info.plist */,
 				3D40B55221B9257400A9115D /* Types */,
 			);
@@ -239,10 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D40B54D21B9217900A9115D /* NetworkSession.swift in Sources */,
-				3D40B54C21B9215B00A9115D /* URLSession+NetworkSession.swift in Sources */,
 				3D40B55121B921D600A9115D /* URLSessionNetworkSessionTests.swift in Sources */,
-				9196389C21B83ED500275D32 /* CommonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,10 +377,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5DYK7QPKKR;
+				DEVELOPMENT_TEAM = K29GPG8VMU;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Common/Info.plist;
@@ -400,6 +392,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ocelotgraphql.ios.common;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -411,10 +404,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 5DYK7QPKKR;
+				DEVELOPMENT_TEAM = K29GPG8VMU;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Common/Info.plist;
@@ -426,6 +419,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ocelotgraphql.ios.common;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -437,7 +431,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5DYK7QPKKR;
+				DEVELOPMENT_TEAM = K29GPG8VMU;
 				INFOPLIST_FILE = CommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -456,7 +450,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5DYK7QPKKR;
+				DEVELOPMENT_TEAM = K29GPG8VMU;
 				INFOPLIST_FILE = CommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
