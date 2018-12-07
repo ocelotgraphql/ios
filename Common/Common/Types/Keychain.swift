@@ -1,14 +1,14 @@
 import Foundation
 
+/// `SecureStringStore` based on Keychain.
 public struct Keychain: SecureStringStore {
-	private let syncsWithICloud: Bool
 	private let searchQuery: CFDictionary
 
-	public init(syncingWithICloud: Bool = true) {
-		self.syncsWithICloud = syncingWithICloud
+	/// Create a new `Keychain` instance.
+	public init() {
 		let searchQuery: [String: Any] = [
 			kSecClassKey as String: kSecClassGenericPassword,
-			kSecAttrSynchronizable as String: syncsWithICloud,
+			kSecAttrSynchronizable as String: true,
 			kSecReturnData as String: true
 		]
 		self.searchQuery = searchQuery as CFDictionary
@@ -36,7 +36,7 @@ public struct Keychain: SecureStringStore {
 		if let value = value, let data = value.data(using: .utf8) {
 			let query: [String: Any] = [
 				kSecClassKey as String: kSecClassGenericPassword,
-				kSecAttrSynchronizable as String: syncsWithICloud,
+				kSecAttrSynchronizable as String: true,
 				kSecValueData as String: data
 			]
 			let status = SecItemAdd(query as CFDictionary, nil)
