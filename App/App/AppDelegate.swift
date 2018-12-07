@@ -1,4 +1,5 @@
 import UIKit
+import Common
 import CommonUI
 
 final class AppDelegate: UIResponder {
@@ -7,7 +8,9 @@ final class AppDelegate: UIResponder {
 		return navigationController
 	}()
 
-	private lazy var coordinator: Coordinator = AppCoordinator(presenter: presenter)
+	private var keychain: SecureStringStore = Keychain()
+
+	private lazy var coordinator: Coordinator = AppCoordinator(presenter: presenter, secureStringStore: &keychain)
 
 	lazy var window: UIWindow? = {
 		let window = UIWindow(frame: UIScreen.main.bounds)

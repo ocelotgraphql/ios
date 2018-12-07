@@ -2,17 +2,8 @@ import Foundation
 
 /// `SecureStringStore` based on Keychain.
 public struct Keychain: SecureStringStore {
-	private let searchQuery: CFDictionary
-
 	/// Create a new `Keychain` instance.
-	public init() {
-		let searchQuery: [String: Any] = [
-			kSecClassKey as String: kSecClassGenericPassword,
-			kSecAttrSynchronizable as String: true,
-			kSecReturnData as String: true
-		]
-		self.searchQuery = searchQuery as CFDictionary
-	}
+	public init() {}
 
 	public subscript(key: String) -> String? {
 		get {
@@ -24,7 +15,7 @@ public struct Keychain: SecureStringStore {
 
 	private func value(for key: String) -> String? {
 		var item: CFTypeRef?
-		_ = SecItemCopyMatching(searchQuery, &item)
+		_ = SecItemCopyMatching(searchQuery(for: key), &item)
 		if let data = item as? Data, let value = String(data: data, encoding: .utf8) {
 			return value
 		} else {
@@ -35,14 +26,24 @@ public struct Keychain: SecureStringStore {
 	private func set(_ value: String?, for key: String) {
 		if let value = value, let data = value.data(using: .utf8) {
 			let query: [String: Any] = [
-				kSecClassKey as String: kSecClassGenericPassword,
+				kSecClass as String: kSecClassGenericPassword,
+				kSecAttrService as String: key,
 				kSecAttrSynchronizable as String: true,
 				kSecValueData as String: data
 			]
-			let status = SecItemAdd(query as CFDictionary, nil)
-			print(status)
+			_ = SecItemAdd(query as CFDictionary, nil)
 		} else {
-			SecItemDelete(searchQuery)
+			SecItemDelete(searchQuery(for: key))
 		}
+	}
+
+	private func searchQuery(for key: String) -> CFDictionary {
+		let searchQuery: [String: Any] = [
+			kSecClass as String: kSecClassGenericPassword,
+			kSecAttrService as String: key,
+			kSecAttrSynchronizable as String: true,
+			kSecReturnData as String: true
+		]
+		return searchQuery as CFDictionary
 	}
 }
