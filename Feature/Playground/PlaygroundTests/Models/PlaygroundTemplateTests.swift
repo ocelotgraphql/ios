@@ -8,5 +8,6 @@ final class PlaygroundTemplateTests: XCTestCase {
 
 		XCTAssertEqual(template.settings, Playground.Settings(endpoint: endpoint))
 		XCTAssertEqual(template.contents, "\n")
+		XCTAssertEqual(template.name, "GitHub")
 	}
 }

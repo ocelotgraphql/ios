@@ -10,6 +10,8 @@
 		3D40B54921B9213200A9115D /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40B54821B9213200A9115D /* NetworkSession.swift */; };
 		3D40B54B21B9215700A9115D /* URLSession+NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40B54A21B9215700A9115D /* URLSession+NetworkSession.swift */; };
 		3D40B55121B921D600A9115D /* URLSessionNetworkSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40B54E21B921B500A9115D /* URLSessionNetworkSessionTests.swift */; };
+		9176865121BB111200DE897B /* SecureStringStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176865021BB111200DE897B /* SecureStringStore.swift */; };
+		9176865621BB137B00DE897B /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9176865521BB137B00DE897B /* Keychain.swift */; };
 		9196389721B83ED500275D32 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9196388D21B83ED500275D32 /* Common.framework */; };
 		9196389E21B83ED500275D32 /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 9196389021B83ED500275D32 /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		3D40B54821B9213200A9115D /* NetworkSession.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 1; };
 		3D40B54A21B9215700A9115D /* URLSession+NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+NetworkSession.swift"; sourceTree = "<group>"; };
 		3D40B54E21B921B500A9115D /* URLSessionNetworkSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetworkSessionTests.swift; sourceTree = "<group>"; };
+		9176865021BB111200DE897B /* SecureStringStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStringStore.swift; sourceTree = "<group>"; };
+		9176865521BB137B00DE897B /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		9196388D21B83ED500275D32 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9196389021B83ED500275D32 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		9196389121B83ED500275D32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				3D40B54821B9213200A9115D /* NetworkSession.swift */,
+				9176865021BB111200DE897B /* SecureStringStore.swift */,
+				9176865521BB137B00DE897B /* Keychain.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -226,7 +232,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D40B54B21B9215700A9115D /* URLSession+NetworkSession.swift in Sources */,
+				9176865621BB137B00DE897B /* Keychain.swift in Sources */,
 				3D40B54921B9213200A9115D /* NetworkSession.swift in Sources */,
+				9176865121BB111200DE897B /* SecureStringStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
