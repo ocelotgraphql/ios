@@ -3,6 +3,7 @@ import Playground
 import UIKit
 import CommonUI
 import PlaygroundBrowserUI
+import EditorUI
 
 final class AppCoordinator: Coordinator {
 	private let presenter: Presenter
@@ -27,11 +28,36 @@ final class AppCoordinator: Coordinator {
 		children.append(playgroundBrowserCoordinator)
 		playgroundBrowserCoordinator.start()
 	}
+
+	private func startEditor(for playground: Playground) {
+		let playgroundEditorCoordinator = PlaygroundEditorCoordinator(
+			editing: playground,
+			presentedBy: presenter
+		)
+		children.append(playgroundEditorCoordinator)
+		playgroundEditorCoordinator.start()
+	}
+
+	private func remove(_ child: Coordinator) {
+		guard let index = children.firstIndex(where: { $0 === child }) else { return }
+		children.remove(at: index)
+	}
 }
 
 extension AppCoordinator: PlaygroundBrowserCoordinatorDelegate {
 	func playgroundBrowserCoordinator(
 		_ coordinator: PlaygroundBrowserCoordinator,
 		didOpen playground: Playground
-	) {}
+	) {
+		startEditor(for: playground)
+	}
+}
+
+extension AppCoordinator: PlaygroundEditorCoordinatorDelegate {
+	func playgroundEditorCoordinator(
+		_ editor: PlaygroundEditorCoordinator,
+		didClose playground: Playground
+	) {
+		remove(editor)
+	}
 }

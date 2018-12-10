@@ -19,5 +19,8 @@
       <FileRef
          location = "group:Feature/PlaygroundBrowserUI/PlaygroundBrowserUI.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Feature/EditorUI/EditorUI.xcodeproj">
+      </FileRef>
    </Group>
 </Workspace>
