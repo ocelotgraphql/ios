@@ -24,6 +24,9 @@ public final class Playground: UIDocument {
 		}
 	}
 
+	/// Additional request headers that should be used when sending queries to `settings.endpoint`.
+	public var additionalRequestHeaders = [String: Any]()
+
 	private lazy var jsonEncoder = JSONEncoder()
 	private lazy var jsonDecoder = JSONDecoder()
 
