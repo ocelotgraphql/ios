@@ -1,7 +1,7 @@
 import Foundation
 
 /// `SecureStringStore` based on Keychain.
-public struct Keychain: SecureStringStore {
+public final class Keychain: SecureStringStore {
 	/// Create a new `Keychain` instance.
 	public init() {}
 

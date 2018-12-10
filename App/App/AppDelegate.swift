@@ -10,7 +10,7 @@ final class AppDelegate: UIResponder {
 
 	private var keychain: SecureStringStore = Keychain()
 
-	private lazy var coordinator: Coordinator = AppCoordinator(presenter: presenter, secureStringStore: &keychain)
+	private lazy var coordinator: Coordinator = AppCoordinator(presenter: presenter, secureStringStore: keychain)
 
 	lazy var window: UIWindow? = {
 		let window = UIWindow(frame: UIScreen.main.bounds)
