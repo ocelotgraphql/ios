@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		912D4D7421BEDC5A001ED784 /* EditorUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 912D4D7221BEDC5A001ED784 /* EditorUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		912D4D8321BEDD8F001ED784 /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912D4D8221BEDD8F001ED784 /* CommonUI.framework */; };
+		912D4D8721BEDDBF001ED784 /* PlaygroundEditorCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D4D8621BEDDBF001ED784 /* PlaygroundEditorCoordinator.swift */; };
+		912D4D8921BEDE62001ED784 /* Playground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912D4D8821BEDE62001ED784 /* Playground.framework */; };
+		912D4D8B21BEDF96001ED784 /* PlaygroundEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912D4D8A21BEDF96001ED784 /* PlaygroundEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		912D4D6F21BEDC5A001ED784 /* EditorUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditorUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		912D4D7221BEDC5A001ED784 /* EditorUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditorUI.h; sourceTree = "<group>"; };
 		912D4D7321BEDC5A001ED784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		912D4D8221BEDD8F001ED784 /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		912D4D8621BEDDBF001ED784 /* PlaygroundEditorCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEditorCoordinator.swift; sourceTree = "<group>"; };
+		912D4D8821BEDE62001ED784 /* Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		912D4D8A21BEDF96001ED784 /* PlaygroundEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912D4D8921BEDE62001ED784 /* Playground.framework in Frameworks */,
+				912D4D8321BEDD8F001ED784 /* CommonUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +42,7 @@
 			children = (
 				912D4D7121BEDC5A001ED784 /* EditorUI */,
 				912D4D7021BEDC5A001ED784 /* Products */,
+				912D4D8121BEDD8F001ED784 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,8 +59,35 @@
 			children = (
 				912D4D7221BEDC5A001ED784 /* EditorUI.h */,
 				912D4D7321BEDC5A001ED784 /* Info.plist */,
+				912D4D8421BEDD9D001ED784 /* Scenes */,
 			);
 			path = EditorUI;
+			sourceTree = "<group>";
+		};
+		912D4D8121BEDD8F001ED784 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				912D4D8821BEDE62001ED784 /* Playground.framework */,
+				912D4D8221BEDD8F001ED784 /* CommonUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		912D4D8421BEDD9D001ED784 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				912D4D8521BEDDAC001ED784 /* Edit */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		912D4D8521BEDDAC001ED784 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				912D4D8621BEDDBF001ED784 /* PlaygroundEditorCoordinator.swift */,
+				912D4D8A21BEDF96001ED784 /* PlaygroundEditorViewController.swift */,
+			);
+			path = Edit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +133,7 @@
 				TargetAttributes = {
 					912D4D6E21BEDC5A001ED784 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -130,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912D4D8B21BEDF96001ED784 /* PlaygroundEditorViewController.swift in Sources */,
+				912D4D8721BEDDBF001ED784 /* PlaygroundEditorCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +302,7 @@
 		912D4D7821BEDC5A001ED784 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
@@ -279,6 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ocelotgraphql.ios.editorui;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,6 +330,7 @@
 		912D4D7921BEDC5A001ED784 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
