@@ -11,6 +11,8 @@
 		9124FC9221B8052D00844300 /* Playground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9124FC8F21B8051F00844300 /* Playground.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		912A14E521B0A93300422DE4 /* UINavigationController+Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A14E421B0A93300422DE4 /* UINavigationController+Presenter.swift */; };
 		912A14F521B0ACD200422DE4 /* UINavigationControllerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912A14F421B0ACD200422DE4 /* UINavigationControllerPresenterTests.swift */; };
+		912D4D7F21BEDD38001ED784 /* EditorUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 912D4D7D21BEDD32001ED784 /* EditorUI.framework */; };
+		912D4D8021BEDD38001ED784 /* EditorUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 912D4D7D21BEDD32001ED784 /* EditorUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		91533D7B21B09C4000CE722A /* CommonUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91533D7921B09C3C00CE722A /* CommonUI.framework */; };
 		91533D7C21B09C4000CE722A /* CommonUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91533D7921B09C3C00CE722A /* CommonUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9176866721BB1D4500DE897B /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9176866221BB1D2A00DE897B /* Common.framework */; };
@@ -46,6 +48,7 @@
 				9176866821BB1D4500DE897B /* Common.framework in Embed Frameworks */,
 				9124FC9221B8052D00844300 /* Playground.framework in Embed Frameworks */,
 				91533D7C21B09C4000CE722A /* CommonUI.framework in Embed Frameworks */,
+				912D4D8021BEDD38001ED784 /* EditorUI.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +59,7 @@
 		9124FC8F21B8051F00844300 /* Playground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Playground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		912A14E421B0A93300422DE4 /* UINavigationController+Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Presenter.swift"; sourceTree = "<group>"; };
 		912A14F421B0ACD200422DE4 /* UINavigationControllerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerPresenterTests.swift; sourceTree = "<group>"; };
+		912D4D7D21BEDD32001ED784 /* EditorUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EditorUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91533D7921B09C3C00CE722A /* CommonUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CommonUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9176866221BB1D2A00DE897B /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		917AAB3721B0AFED004C392F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 				9176866721BB1D4500DE897B /* Common.framework in Frameworks */,
 				91A460AC21B3270F00799C52 /* PlaygroundBrowserUI.framework in Frameworks */,
 				91533D7B21B09C4000CE722A /* CommonUI.framework in Frameworks */,
+				912D4D7F21BEDD38001ED784 /* EditorUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 		91533D7821B09C3C00CE722A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				912D4D7D21BEDD32001ED784 /* EditorUI.framework */,
 				9176866221BB1D2A00DE897B /* Common.framework */,
 				9124FC8F21B8051F00844300 /* Playground.framework */,
 				91A460AA21B3270800799C52 /* PlaygroundBrowserUI.framework */,
