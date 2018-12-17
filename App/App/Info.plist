@@ -63,7 +63,7 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>com.apple.package</string>
-				<string>com.apple.data</string>
+				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
 			<string>Ocelot Playground</string>
